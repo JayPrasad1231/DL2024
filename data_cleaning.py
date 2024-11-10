@@ -9,8 +9,6 @@ song_dataset = {}
 def read_songs():
     with open("songs.pkl", "rb") as file:
         song_dataset = pickle.load(file)
-        val = random.sample(list(song_dataset.keys()), 500)
-
         return song_dataset
     
 song_dataset = read_songs()

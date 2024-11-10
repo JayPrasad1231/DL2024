@@ -17,11 +17,11 @@ def ret_playlists():
 
 # VECTORIZATION OF INPUT
 
-features = [] # 2d array
+playlist_vectorized = [] # 2d array
 
 for playlist in playlists:
 
-    # populate features 
+    # populate playlist_vectorized
 
     pass
 
