@@ -17,6 +17,14 @@ def ret_playlists():
 
 # VECTORIZATION OF INPUT
 
+features = [] # 2d array
+
+for playlist in playlists:
+
+    # populate features 
+
+    pass
+
 # MODEL TESTING
 
 # import torch.optim as optim
