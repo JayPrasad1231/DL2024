@@ -29,9 +29,9 @@ for playlist in playlists:
 
 # import torch.optim as optim
 
-# input_size = ...  # Number of features in your song representation
+# input_size = len(features)  # Number of features in your song representation
 # hidden_size = 128  # Hyperparameter you can tune
-# output_size = len(song_dataset)  # Number of possible song recommendations (or size of embedding)
+# output_size = 250  # Number of possible song recommendations (or size of embedding)
 
 # model = SongRecommenderMLP(input_size, hidden_size, output_size)
 # criterion = nn.CrossEntropyLoss()  # Or MSELoss depending on target type
