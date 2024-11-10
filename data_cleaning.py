@@ -2,8 +2,18 @@
 import json
 import pandas as pd
 import pickle
+import random
 
 song_dataset = {}
+
+def read_songs():
+    with open("songs.pkl", "rb") as file:
+        song_dataset = pickle.load(file)
+        val = random.sample(list(song_dataset.keys()), 500)
+
+        return song_dataset
+    
+song_dataset = read_songs()
 
 def clean_data(spotify_million):
 
@@ -38,10 +48,6 @@ def populate_songs(spotify_dataset):
 
     with open("songs.pkl", "wb") as file:
         pickle.dump(song_dataset, file)
-
-def read_songs():
-    with open("songs.pkl", "rb") as file:
-        song_dataset = pickle.load(file)
     
 
 # populate_songs("song_data.csv")
@@ -49,10 +55,10 @@ read_songs()
 res = []
 
 # file_names = file_names of all the slices (1000 of them)
-file_names = [f"mpd.slice.{i * 1000}-{i * 1000 + 999}.json" for i in range(1000)]
+# file_names = [f"mpd.slice.{i * 1000}-{i * 1000 + 999}.json" for i in range(1000)]
 
-for file_name in file_names:
-    res.extend(clean_data(file_name))
+# for file_name in file_names:
+#     res.extend(clean_data(file_name))
 
 def return_playlist():
     return res
