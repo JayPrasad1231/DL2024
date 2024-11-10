@@ -53,3 +53,6 @@ file_names = [f"mpd.slice.{i * 1000}-{i * 1000 + 999}.json" for i in range(1000)
 
 for file_name in file_names:
     res.extend(clean_data(file_name))
+
+def return_playlist():
+    return res
