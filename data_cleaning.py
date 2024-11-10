@@ -46,6 +46,10 @@ def read_songs():
 
 # populate_songs("song_data.csv")
 read_songs()
-res = clean_data("slice_1.json")
+res = []
 
-# print(res)
+# file_names = file_names of all the slices (1000 of them)
+file_names = [f"mpd.slice.{i * 1000}-{i * 1000 + 999}.json" for i in range(1000)]
+
+for file_name in file_names:
+    res.extend(clean_data(file_name))
